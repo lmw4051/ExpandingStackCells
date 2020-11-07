@@ -6,16 +6,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="5Ub-aU-spY">
             <objects>
-                <tableViewController id="n2E-ba-46Z" sceneMemberID="viewController">
+                <tableViewController id="n2E-ba-46Z" customClass="MainViewController" customModule="ExpandingStackCells" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0MG-dn-nrp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="152" id="2gB-Bw-UPu">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpandingCell" rowHeight="152" id="2gB-Bw-UPu" customClass="ExpandingCell" customModule="ExpandingStackCells" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="152"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2gB-Bw-UPu" id="2VY-fF-4Nz">
@@ -38,8 +38,7 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="SGG-Nq-QTI" secondAttribute="bottom" constant="16" id="2t1-vk-hSo"/>
-                                                        <constraint firstItem="SGG-Nq-QTI" firstAttribute="centerY" secondItem="7Mn-NI-y4f" secondAttribute="centerY" id="Cb9-pg-ywl"/>
-                                                        <constraint firstItem="SGG-Nq-QTI" firstAttribute="centerX" secondItem="7Mn-NI-y4f" secondAttribute="centerX" id="Ny3-Zo-Z1I"/>
+                                                        <constraint firstAttribute="trailing" secondItem="SGG-Nq-QTI" secondAttribute="trailing" constant="16" id="Kpb-C6-yDw"/>
                                                         <constraint firstItem="SGG-Nq-QTI" firstAttribute="top" secondItem="7Mn-NI-y4f" secondAttribute="top" constant="16" id="muf-zy-Pw8"/>
                                                         <constraint firstItem="SGG-Nq-QTI" firstAttribute="leading" secondItem="7Mn-NI-y4f" secondAttribute="leading" constant="16" id="zPg-Rw-ZXv"/>
                                                     </constraints>
@@ -56,11 +55,10 @@
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="0ln-Gj-Umm" secondAttribute="trailing" constant="16" id="5tv-hg-F6e"/>
                                                         <constraint firstAttribute="bottom" secondItem="0ln-Gj-Umm" secondAttribute="bottom" constant="16" id="BEm-ZD-WXa"/>
                                                         <constraint firstItem="0ln-Gj-Umm" firstAttribute="leading" secondItem="mXp-O7-0Ls" secondAttribute="leading" constant="16" id="JNX-qM-5Pj"/>
                                                         <constraint firstItem="0ln-Gj-Umm" firstAttribute="top" secondItem="mXp-O7-0Ls" secondAttribute="top" constant="16" id="dNM-el-Bkb"/>
-                                                        <constraint firstItem="0ln-Gj-Umm" firstAttribute="centerY" secondItem="mXp-O7-0Ls" secondAttribute="centerY" id="iIZ-ug-ECY"/>
-                                                        <constraint firstItem="0ln-Gj-Umm" firstAttribute="centerX" secondItem="mXp-O7-0Ls" secondAttribute="centerX" id="yFf-j1-taT"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -76,6 +74,11 @@
                                         <constraint firstAttribute="trailing" secondItem="biv-hk-RaU" secondAttribute="trailing" id="vez-hW-a50"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="detailLabel" destination="0ln-Gj-Umm" id="IAm-Fp-9QV"/>
+                                    <outlet property="stackView" destination="biv-hk-RaU" id="mTg-nR-fgx"/>
+                                    <outlet property="titleLabel" destination="SGG-Nq-QTI" id="MGA-qP-gci"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
